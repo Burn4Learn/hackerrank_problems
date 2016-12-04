@@ -1,0 +1,6 @@
+#include "between_two_sets.h"
+
+#test findGCD_in_A
+	int a[5] = {2, 4, 8, 16, 37};
+	ck_assert_int_eq(findGCD_inA(a, 1), 16);
+
