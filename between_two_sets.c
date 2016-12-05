@@ -1,5 +1,6 @@
 #include "between_two_sets.h"
 #include <stdbool.h>
+#include <stdio.h>
 
 static bool allOfAIsFactor(int *a, int element, int size)
 {
@@ -39,5 +40,7 @@ int findLCD_inB(int *b, int size)
 
 int getBetweens(int *a, int *b, int sizeA, int sizeB)
 {
-	return 2;
+	int gcd_A = findGCD_inA(a, sizeB);
+	int lcd_B = findLCD_inB(b, sizeA);
+	return lcd_B / gcd_A;
 }
