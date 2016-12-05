@@ -8,12 +8,20 @@
 #line 1 "tests.check"
 #include "between_two_sets.h"
 
+int a[4] = {2, 4, 8, 16};
+
 START_TEST(findGCD_in_A)
 {
-#line 4
-	int a[5] = {2, 4, 8, 16, 37};
-	ck_assert_int_eq(findGCD_inA(a, 1), 16);
+#line 6
+	ck_assert_int_eq(findGCD_inA(a, 4), 16);
 
+}
+END_TEST
+
+START_TEST(allOfAIsFactor)
+{
+#line 9
+	ck_assert_int_eq(findGCD_inA(a, 4), 16);	
 }
 END_TEST
 
@@ -26,6 +34,7 @@ int main(void)
 
     suite_add_tcase(s1, tc1_1);
     tcase_add_test(tc1_1, findGCD_in_A);
+    tcase_add_test(tc1_1, allOfAIsFactor);
 
     srunner_run_all(sr, CK_ENV);
     nf = srunner_ntests_failed(sr);
