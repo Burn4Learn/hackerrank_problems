@@ -37,4 +37,7 @@ int findLCD_inB(int *b, int size)
 	return lcd;
 }
 
-
+int getBetweens(int *a, int *b, int sizeA, int sizeB)
+{
+	return 2;
+}

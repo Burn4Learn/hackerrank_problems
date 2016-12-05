@@ -8,13 +8,13 @@
 #line 1 "tests.check"
 #include "between_two_sets.h"
 #define SIZE 5
-int a[SIZE] = {2, 4, 8, 16, 64};
+int a[SIZE] = {1, 2, 4, 8, 16};
 int b[SIZE] = {32, 64, 128, 256, 512};
 
 START_TEST(findGCD_in_A)
 {
 #line 7
-	ck_assert_int_eq(findGCD_inA(a, SIZE), 64);
+	ck_assert_int_eq(findGCD_inA(a, SIZE), 16);
 
 }
 END_TEST
@@ -22,7 +22,7 @@ END_TEST
 START_TEST(allOfAIsFactor)
 {
 #line 10
-	ck_assert_int_eq(findGCD_inA(a, SIZE), 64);	
+	ck_assert_int_eq(findGCD_inA(a, SIZE), 16);	
 
 }
 END_TEST
@@ -39,6 +39,14 @@ START_TEST(is_factor_for_allOf_B)
 {
 #line 16
 	ck_assert_int_eq(findLCD_inB(b, SIZE), 32);
+	
+}
+END_TEST
+
+START_TEST(get_total_number_of_factors)
+{
+#line 19
+	ck_assert_int_eq(getBetweens(a, b, SIZE, SIZE), 2);
 }
 END_TEST
 
@@ -54,6 +62,7 @@ int main(void)
     tcase_add_test(tc1_1, allOfAIsFactor);
     tcase_add_test(tc1_1, findLCD_in_B);
     tcase_add_test(tc1_1, is_factor_for_allOf_B);
+    tcase_add_test(tc1_1, get_total_number_of_factors);
 
     srunner_run_all(sr, CK_ENV);
     nf = srunner_ntests_failed(sr);
