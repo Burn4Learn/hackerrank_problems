@@ -9,7 +9,7 @@ static bool allOfAIsFactor(int *a, int element, int size)
 	return true;
 }
 
-static bool IsFactorOfAllB(int *a, int element, int size)
+static bool isFactorOfAllB(int *a, int element, int size)
 {
 	for (int i = 0; i < size; i++)
 		if (a[i] % element != 0)
@@ -29,9 +29,12 @@ int findGCD_inA(int *a, int size)
 
 int findLCD_inB(int *b, int size)
 {
-	if (IsFactorOfAllB(b, b[0], size))
-		return 32;
-	return 0;
+	int lcd = 101;
+	for (int i = 0; i < size; i++)
+		if (isFactorOfAllB(b, b[i], size))
+			if (b[i] < lcd)
+				lcd = b[i];
+	return lcd;
 }
 
 
