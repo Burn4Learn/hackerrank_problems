@@ -11,9 +11,12 @@ static bool allOfAIsFactor(int *a, int element, int size)
 
 int findGCD_inA(int *a, int size)
 {
-	if (allOfAIsFactor(a, a[size - 1], size))
-		return 16;
-	return 0;
+	int gcd = 0;
+	for (int i = 0; i < size; i++)
+		if (allOfAIsFactor(a, a[i], size))
+			if (gcd < a[i])
+				gcd = a[i];
+	return gcd;
 }
 
 

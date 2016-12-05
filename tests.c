@@ -7,13 +7,13 @@
 
 #line 1 "tests.check"
 #include "between_two_sets.h"
-
-int a[4] = {2, 4, 8, 16};
+#define SIZE 5
+int a[SIZE] = {2, 4, 8, 16, 64};
 
 START_TEST(findGCD_in_A)
 {
 #line 6
-	ck_assert_int_eq(findGCD_inA(a, 4), 16);
+	ck_assert_int_eq(findGCD_inA(a, SIZE), 64);
 
 }
 END_TEST
@@ -21,7 +21,7 @@ END_TEST
 START_TEST(allOfAIsFactor)
 {
 #line 9
-	ck_assert_int_eq(findGCD_inA(a, 4), 16);	
+	ck_assert_int_eq(findGCD_inA(a, SIZE), 64);	
 }
 END_TEST
 

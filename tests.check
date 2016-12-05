@@ -1,9 +1,9 @@
 #include "between_two_sets.h"
-
-int a[4] = {2, 4, 8, 16};
+#define SIZE 5
+int a[SIZE] = {2, 4, 8, 16, 64};
 
 #test findGCD_in_A
-	ck_assert_int_eq(findGCD_inA(a, 4), 16);
+	ck_assert_int_eq(findGCD_inA(a, SIZE), 64);
 
 #test allOfAIsFactor
-	ck_assert_int_eq(findGCD_inA(a, 4), 16);	
+	ck_assert_int_eq(findGCD_inA(a, SIZE), 64);	
