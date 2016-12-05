@@ -7,3 +7,6 @@ int a[SIZE] = {2, 4, 8, 16, 64};
 
 #test allOfAIsFactor
 	ck_assert_int_eq(findGCD_inA(a, SIZE), 64);	
+
+#test findLCD_in_B
+	ck_assert_int_eq(findLCD_inB(a, SIZE), 2);

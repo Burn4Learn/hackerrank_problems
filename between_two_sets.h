@@ -9,5 +9,6 @@
 #define BETWEEN_TWO_SETS_H_
 
 int findGCD_inA(int *a, int size);
+int findLCD_inB(int *a, int size);
 
 #endif /* BETWEEN_TWO_SETS_H_ */

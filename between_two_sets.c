@@ -19,4 +19,7 @@ int findGCD_inA(int *a, int size)
 	return gcd;
 }
 
-
+int findLCD_inB(int *b, int size)
+{
+	return 2;
+}

@@ -22,6 +22,14 @@ START_TEST(allOfAIsFactor)
 {
 #line 9
 	ck_assert_int_eq(findGCD_inA(a, SIZE), 64);	
+
+}
+END_TEST
+
+START_TEST(findLCD_in_B)
+{
+#line 12
+	ck_assert_int_eq(findLCD_inB(a, SIZE), 2);
 }
 END_TEST
 
@@ -35,6 +43,7 @@ int main(void)
     suite_add_tcase(s1, tc1_1);
     tcase_add_test(tc1_1, findGCD_in_A);
     tcase_add_test(tc1_1, allOfAIsFactor);
+    tcase_add_test(tc1_1, findLCD_in_B);
 
     srunner_run_all(sr, CK_ENV);
     nf = srunner_ntests_failed(sr);
